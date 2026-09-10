@@ -108,12 +108,36 @@ int linearSearch(int* a, int x, int n) {
     return -1; // Not found at all, return -1
 }
 
+long long int binSearch(int* a, int x, int n) {
+    int left, right, mid; //l and r indices of current search area
+    left = 0;
+    right =  n - 1;
+
+    while (left != right) {
+        mid = (left + right) / 2; //find midpoint
+        if (a[mid] == x) return mid;
+        if (a[mid] > x) {
+            //choose left
+            right = mid - 1;
+        }
+        else {
+            left = mid + 1;
+        }
+    }
+    if (a[left] == x) return left;
+}
+
 int main()
 {
-    int n = 100;
+    //int n = 100;
+    //int* a = allocateArray(n);
+    //int x = 42;
+    //cout << "linSearch(a, " << x << "," << n << ")=" << linearSearch(a, x, n);
+
+    int n = 200;
     int* a = allocateArray(n);
-    int x = 42;
-    cout << "linSearch(a, " << x << "," << n << ")=" << linearSearch(a, x, n);
+    int x = 99;
+    cout << "BinSearch(a, " << x << "," << n << ")=" << binSearch(a, x, n);
 
     //freeMemory();
     // 
