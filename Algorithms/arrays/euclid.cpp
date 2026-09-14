@@ -179,7 +179,6 @@ void timeBinary(long long int* a, long long int x, long long int n)
 
 int main()
 {
-    
     auto binStart = high_resolution_clock::now();
 
     long long int n = 1000000; //array size
@@ -187,10 +186,8 @@ int main()
     srand(time(0));
     long long int x = rand() % 1000001; //wanted value
     
-    
     timeLinear(a, x, n);
     cout << "*" << endl;
     timeBinary(a, x, n);
-
 }
 
