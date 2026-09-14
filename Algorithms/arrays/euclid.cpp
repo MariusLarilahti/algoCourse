@@ -1,5 +1,7 @@
 #include <iostream>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
 //Palauttaa kahden luvun suurimman yhteisen tekijän
 //HUOM a >= b on vaatimus jotta tämä toimii
@@ -15,27 +17,27 @@ int gcd(int a, int b) {
 
 //Lesson 1: arrays
 int length = 100;
-int highestInt;
+int maxInt;
 
-int arrayMixed[100];
+int arrMixed[100];
 //int* arrayAllocate = new int[100];
 
-static int* allocateArray(unsigned n) { // add values to p array and allocate memory
+static long long int* allocateArray(unsigned n) { // add values to p array and allocate memory
 
     //int _array[100]{};
     //unsigned n = 100;
 
     cout << "Reserving memory...";
-    int* arrayAllocate = new int[n];
+    long long int* arrayAllocate = new long long int[n];
     cout << "Done!" << endl;
 
-    cout << "Assigning data into array...";
-    for (int i = 0; i < length; i++)
+    //cout << "Assigning data into array...";
+    for (int i = 0; i < n; i++)
         arrayAllocate[i] = i;
-    cout << "Done!" << endl;
+    //cout << "Done!" << endl;
 
-    for (int i = 0; i < length; i++)
-        cout << "array[" << i << "]: " << arrayAllocate[i] << endl;
+    //for (int i = 0; i < length; i++)
+    //    cout << "array[" << i << "]: " << arrayAllocate[i] << endl;
 
     //cout << "Freeing memory...";
     //delete[] arrayAllocate;
@@ -69,15 +71,15 @@ bool assignArray(int arrayAdd[], unsigned n) { // add values to p array
 
 int findMax(int arrayMax[], int size) { //finds the highest array value
 
-    highestInt = arrayMax[0];
+    maxInt = arrayMax[0];
 
     for (int i = 0; i < size; i++) {
-        if (arrayMax[i] > highestInt) {
-            highestInt = arrayMax[i];
+        if (arrayMax[i] > maxInt) {
+            maxInt = arrayMax[i];
         }
     }
     //cout << "Highest: " << highestInt << endl;
-    return highestInt;
+    return maxInt;
 }
 
 int randomize(int arrayMix[], int size) { //add random values and randomizes array
@@ -96,9 +98,9 @@ int randomize(int arrayMix[], int size) { //add random values and randomizes arr
 
 //Lesson 1 end
 //ASSUMES a is in ascending order
-int linearSearch(int* a, int x, int n) {
+long long int linearSearch(long long int* a, long long int x, long long int n) {
 
-    int i = 0; //index for going through array
+    long long int i = 0; //index for going through array
 
     while (i < n && a[i] <= x) { //i less than size of array
         if (a[i] == x) return i; //found x, return it's index
@@ -108,8 +110,8 @@ int linearSearch(int* a, int x, int n) {
     return -1; // Not found at all, return -1
 }
 
-long long int binSearch(int* a, int x, int n) {
-    int left, right, mid; //l and r indices of current search area
+long long int binarySearch(long long int* a, long long int x, long long int n) {
+    long long int left, right, mid; //l and r indices of current search area
     left = 0;
     right =  n - 1;
 
@@ -125,32 +127,70 @@ long long int binSearch(int* a, int x, int n) {
         }
     }
     if (a[left] == x) return left;
+
+    return -1; // Not found at all, return -1
+}
+
+
+void timeLinear(long long int* a, long long int x, long long int n)
+{
+    cout << "-------------------------------" << endl;
+    cout << "LINEAR" << endl;
+
+    auto linStart = high_resolution_clock::now();
+
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "linSearch(a, " << x << "," << n << ")= " << linearSearch(a, x, n) << endl;
+    }
+
+    auto linEnd = high_resolution_clock::now();
+
+    auto linDuration = duration_cast<microseconds>(linEnd - linStart);
+
+    cout << "Execution Time: "
+        << linDuration.count()
+        << " microseconds" << endl;
+    cout << "-------------------------------" << endl;
+}
+
+
+void timeBinary(long long int* a, long long int x, long long int n)
+{
+    cout << "-------------------------------" << endl;
+    cout << "BINARY" << endl;
+
+    auto binStart = high_resolution_clock::now();
+
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "BinSearch(a, " << x << "," << n << ")= " << binarySearch(a, x, n) << endl;
+    }
+
+    auto binEnd = high_resolution_clock::now();
+
+    auto binDuration = duration_cast<microseconds>(binEnd - binStart);
+
+    cout << "Execution Time: "
+        << binDuration.count()
+        << " microseconds" << endl;
+    cout << "-------------------------------" << endl;
 }
 
 int main()
 {
-    //int n = 100;
-    //int* a = allocateArray(n);
-    //int x = 42;
-    //cout << "linSearch(a, " << x << "," << n << ")=" << linearSearch(a, x, n);
+    
+    auto binStart = high_resolution_clock::now();
 
-    int n = 200;
-    int* a = allocateArray(n);
-    int x = 99;
-    cout << "BinSearch(a, " << x << "," << n << ")=" << binSearch(a, x, n);
+    long long int n = 1000000; //array size
+    long long int* a = allocateArray(n);
+    srand(time(0));
+    long long int x = rand() % 1000001; //wanted value
+    
+    
+    timeLinear(a, x, n);
+    cout << "*" << endl;
+    timeBinary(a, x, n);
 
-    //freeMemory();
-    // 
-    //AllocateArray(length);
-    //AssignArray(arrayAllocate, length);
-    //Randomize(arrayMixed, length);
-
-    //int max = FindMax(arrayMixed, length);
-
-    //cout << "Max in arrayMixed: " << FindMax(arrayMixed, length) << endl;
-
-    //int a = 42; int b = 35;
-    //cout << "gcd( " << a << " , " << b << " )= " << (a, b) << endl;
-    //return EXIT_SUCCESS;
 }
 
