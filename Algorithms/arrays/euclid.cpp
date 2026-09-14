@@ -97,6 +97,13 @@ int randomize(int arrayMix[], int size) { //add random values and randomizes arr
 }
 
 //Lesson 1 end
+// 
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------
+// HUOM TÄSTÄ ALKAA PROGRAMMING TASK KOTILÄKSYÄ VARTEN TEHTY KOODI
+
 //ASSUMES a is in ascending order
 long long int linearSearch(long long int* a, long long int x, long long int n) {
 
@@ -127,10 +134,8 @@ long long int binarySearch(long long int* a, long long int x, long long int n) {
         }
     }
     if (a[left] == x) return left;
-
     return -1; // Not found at all, return -1
 }
-
 
 void timeLinear(long long int* a, long long int x, long long int n)
 {
@@ -153,7 +158,6 @@ void timeLinear(long long int* a, long long int x, long long int n)
         << " microseconds" << endl;
     cout << "-------------------------------" << endl;
 }
-
 
 void timeBinary(long long int* a, long long int x, long long int n)
 {
@@ -190,4 +194,4 @@ int main()
     cout << "*" << endl;
     timeBinary(a, x, n);
 }
-
+// ---------------------------------------------------------------------------------------------------------------------------------------------
