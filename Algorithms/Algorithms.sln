@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.10.12201.205 stable
+VisualStudioVersion = 18.10.12201.205
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lesson2", "Lesson2\Lesson2.vcxproj", "{BF713FFB-E139-41AC-9FC0-12AA8BFFA58A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "recursions", "recursions\recursions.vcxproj", "{A1949B28-697F-421A-A621-EEC250DBF907}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "algo_analysis", "algo_analysis\algo_analysis.vcxproj", "{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{A1949B28-697F-421A-A621-EEC250DBF907}.Release|x64.Build.0 = Release|x64
 		{A1949B28-697F-421A-A621-EEC250DBF907}.Release|x86.ActiveCfg = Release|Win32
 		{A1949B28-697F-421A-A621-EEC250DBF907}.Release|x86.Build.0 = Release|Win32
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Debug|x64.ActiveCfg = Debug|x64
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Debug|x64.Build.0 = Debug|x64
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Debug|x86.ActiveCfg = Debug|Win32
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Debug|x86.Build.0 = Debug|Win32
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Release|x64.ActiveCfg = Release|x64
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Release|x64.Build.0 = Release|x64
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Release|x86.ActiveCfg = Release|Win32
+		{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
