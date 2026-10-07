@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 
-//f(n) = f(n-1) + f(n-2),  n > 1 and f(0) = f(1) = 1
+//MAIN REPO: https://github.com/MariusLarilahti/algoCourse
+//assignment COMMIT: https://github.com/MariusLarilahti/algoCourse/commit/666e8774c94fe5312968c3a76edd37d2a9bee3f5
 
+//f(n) = f(n-1) + f(n-2),  n > 1 and f(0) = f(1) = 1
 int fibRecursive(int n)
 {
     if (n < 0)
@@ -19,7 +21,7 @@ int fibIterative(int n)
     int n_minus_1 = 0;
     int n_current = 1;
 
-    for (int i = 1; i < n + 1; i++) 
+    for (int i = 1; i < n + 1; i++)
     {
         n_minus_2 = n_minus_1;
         n_minus_1 = n_current;
@@ -31,12 +33,12 @@ int fibIterative(int n)
 //A(0,n) = n + 1
 //A(m, 0) = A(m - 1, 1)
 //A(m, n) = A(m - 1, A(m, n - 1))
-int ackermann(int m, int n) 
+int ackermann(int m, int n)
 {
     if (m < 0 || n < 0)
         return 0;
 
-    if (m == 0) 
+    if (m == 0)
         return n + 1;
 
     if (n == 0)
@@ -54,5 +56,5 @@ int main()
     cin >> x;
     cout << "Recursive: " << fibRecursive(x) << endl;
     cout << "Iterative: " << fibIterative(x) << endl;
-    
+
 }
