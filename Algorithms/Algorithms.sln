@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 18
-VisualStudioVersion = 18.10.12201.205
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lesson2", "Lesson2\Lesson2.vcxproj", "{BF713FFB-E139-41AC-9FC0-12AA8BFFA58A}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "algo_analysis", "algo_analysis\algo_analysis.vcxproj", "{03ECB612-9D89-47CE-AA1E-EDEA69D69C66}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "adt", "adt\adt.vcxproj", "{1E18CCFC-4345-443F-8533-A0C2D26EEF4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack", "stack\stack.vcxproj", "{B8CC8FDD-4536-4617-BA7C-A079F12556BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{1E18CCFC-4345-443F-8533-A0C2D26EEF4F}.Release|x64.Build.0 = Release|x64
 		{1E18CCFC-4345-443F-8533-A0C2D26EEF4F}.Release|x86.ActiveCfg = Release|Win32
 		{1E18CCFC-4345-443F-8533-A0C2D26EEF4F}.Release|x86.Build.0 = Release|Win32
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Debug|x64.ActiveCfg = Debug|x64
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Debug|x64.Build.0 = Debug|x64
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Debug|x86.Build.0 = Debug|Win32
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Release|x64.ActiveCfg = Release|x64
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Release|x64.Build.0 = Release|x64
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Release|x86.ActiveCfg = Release|Win32
+		{B8CC8FDD-4536-4617-BA7C-A079F12556BF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

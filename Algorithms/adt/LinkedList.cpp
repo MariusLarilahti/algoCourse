@@ -114,3 +114,7 @@ bool LinkedList::Delete(int value)
 
     return true;
 }
+
+void LinkedList::Push(int value)
+{
+}

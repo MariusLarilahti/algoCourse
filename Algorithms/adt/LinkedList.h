@@ -18,6 +18,8 @@ public:
 
 	bool Delete(int value);
 
+	void Push(int value);
+
 	LinkedList() {
 		this->pHead = nullptr;
 	}
