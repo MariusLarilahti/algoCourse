@@ -15,7 +15,7 @@ public:
 	}
 
 	T Pop() {
-		if (IsEmpty()) { return static_cast<T>(-1); }
+		if (IsEmpty()) { return static_cast<T>("-1"); }
 
 		Node<T>* pDelete = pTop;
 		T data = pDelete->data;
@@ -27,7 +27,7 @@ public:
 
 	T Top()
 	{
-		if (IsEmpty()) { return static_cast<T>(-1); } //generally try to make sure you dont call on empty stacks
+		if (IsEmpty()) { return static_cast<T>("-1"); } //generally try to make sure you dont call on empty stacks
 		return pTop->data;
 	}
 
