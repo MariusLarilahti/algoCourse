@@ -43,9 +43,49 @@ void Heap::insert(int key)
 
 }
 
-int Heap::delMin()
+void Heap::heapify(int i)
 {
-	return 0;
+	while (true)
+	{
+		int smallest = i; // Initialize smallest as root
+		int l = 2 * i; // left = 2*k + 1
+		int r = 2 * i + 1; // right = 2*k + 2
+
+		// If left child is smaller than root
+		if (l <= length() && heapArray[l] < heapArray[smallest])
+			smallest = l;
+
+		// If right child is smaller than smallest so far
+		if (r <= length() && heapArray[r] < heapArray[smallest])
+			smallest = r;
+
+		// If smallest is not root
+		if (smallest != i) {
+			std::swap(heapArray[i], heapArray[smallest]);
+			i = smallest;
+		}
+		else
+		{
+			break;
+		}
+	}
+}
+
+
+void Heap::delMin()
+{
+	if (length() < 1)
+	{
+		return;
+	}
+	else
+	{
+		int lastElement = heapArray[length()];
+		heapArray[1] = lastElement;
+		heapArray[0]--;
+
+		heapify(1);
+	}
 }
 
 void Heap::print()
