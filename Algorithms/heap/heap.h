@@ -9,7 +9,7 @@ public:
 	Heap(int capacity = 10000000)
 	{
 		heapArray.resize(capacity + 1);
-		heapArray[0] = 0; // heap length is stored at index 0
+		heapArray[0] = 0; // length is stored at index 0
 	}
 
 	void insert(int key);
